@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_client/cloud_eurake_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_client/cloud_eurake_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eurake_ha_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eurake_ha_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
     </modules>

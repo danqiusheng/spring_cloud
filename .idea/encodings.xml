@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_ha_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_ha_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_server" charset="UTF-8" />
   </component>
 </project>
