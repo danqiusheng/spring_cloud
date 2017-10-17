@@ -7,6 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_datasource/spring_datasource.iml" filepath="$PROJECT_DIR$/spring_datasource/spring_datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" filepath="$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_test_db/spring_test_db.iml" filepath="$PROJECT_DIR$/spring_test_db/spring_test_db.iml" />
     </modules>
   </component>
 </project>
