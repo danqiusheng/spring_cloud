@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.moa</groupId>
-	<artifactId>spring_test_db</artifactId>
+	<groupId>com.moa.druid</groupId>
+	<artifactId>spring_datasource_druid</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring_test_db</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring_datasource_druid</name>
+	<description> </description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,10 +38,14 @@
 
 
 		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
 		<!--MySQL驱动 ，-->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -70,11 +74,29 @@
 		</dependency>
 
 
-		<!-- 添加atomikos 的事物管理-->
+
+		<!-- 加入atomokios -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 		</dependency>
+
+
+		<!--  配置 alibaba 的druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- 配置 alibaba 的druid结束-->
 	</dependencies>
 
 	<build>

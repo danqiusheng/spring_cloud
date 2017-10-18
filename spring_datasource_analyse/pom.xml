@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.21</version>
+			<version>5.1.36</version>
 		</dependency>
 
 
@@ -81,6 +81,21 @@
 		</dependency>
 
 
+		<!--  配置 alibaba 的druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.31</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- 配置 alibaba 的druid结束-->
 	</dependencies>
 
 	<build>

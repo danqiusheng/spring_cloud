@@ -1,9 +1,9 @@
-package com.moa.datasource;
+package com.moa.druid;
 
-import com.moa.datasource.primary.model.User;
-import com.moa.datasource.primary.repository.UserRepository;
-import com.moa.datasource.secondary.model.MessageInfo;
-import com.moa.datasource.secondary.repository.MessageRepository;
+import com.moa.druid.primary.model.User;
+import com.moa.druid.primary.repository.UserRepository;
+import com.moa.druid.secondary.model.MessageInfo;
+import com.moa.druid.secondary.repository.MessageRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringDatasourceAnalyseApplicationTests {
+public class DemoApplicationTests {
+
 
 	@Autowired
 	private MessageRepository messageRepository;
@@ -24,9 +25,9 @@ public class SpringDatasourceAnalyseApplicationTests {
 
 	@Test
 	@Transactional
-	@Rollback(false)
+	@Rollback(false) // 防止测试单元回滚
 	public void contextLoads() {
- 		userRepository.save(new User("张三","Hello atomikos",1));
+		userRepository.save(new User("张三","Hello atomikos",1));
 		userRepository.save(new User("李四","Hello atomikos",6));
 		userRepository.save(new User("王武","Hello atomikos",4));
 
@@ -35,5 +36,6 @@ public class SpringDatasourceAnalyseApplicationTests {
 		messageRepository.save(new MessageInfo("2","Hello1","hello3  everyone"));
 		messageRepository.save(new MessageInfo("3","Hello2","hello 33everyone"));
 	}
+
 
 }

@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_datasource/spring_datasource.iml" filepath="$PROJECT_DIR$/spring_datasource/spring_datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_datasource_analyse/spring_datasource_analyse.iml" filepath="$PROJECT_DIR$/spring_datasource_analyse/spring_datasource_analyse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" filepath="$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" filepath="$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_test_db/spring_test_db.iml" filepath="$PROJECT_DIR$/spring_test_db/spring_test_db.iml" />
     </modules>
