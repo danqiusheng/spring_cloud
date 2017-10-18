@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/cloud_eurake_ha_client/pom.xml" />
         <option value="$PROJECT_DIR$/spring_db_datasource/pom.xml" />
         <option value="$PROJECT_DIR$/spring_test_db/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_datasource_analyse/pom.xml" />
       </list>
     </option>
   </component>

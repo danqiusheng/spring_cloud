@@ -9,22 +9,25 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by Administrator on 2017/10/17.
  */
 @Configuration
-@EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "${spring.datasource.primary.basePackages}",
         entityManagerFactoryRef = "entityManagerFactoryPrimary",
         transactionManagerRef = "jtaTransactionManager")
+@DependsOn("jtaTransactionManager")
+@EnableTransactionManagement
 public class PrimaryDataSourceConfig {
 
     @Value("${spring.datasource.primary.basePackages}")
@@ -33,14 +36,14 @@ public class PrimaryDataSourceConfig {
     @Bean
     @Primary
     @ConfigurationProperties("spring.datasource.primary")
-    public DataSourceProperties primaryProperties(){
+    public DataSourceProperties primaryProperties() {
         return new DataSourceProperties();
     }
 
-    @Bean
+    @Bean()
     @Primary
     @ConfigurationProperties("spring.datasource.primary")
-    public DataSource primaryDataSource(){
+    public DataSource primaryDataSource() {
         return primaryProperties().initializeDataSourceBuilder().build();
     }
 
@@ -50,7 +53,6 @@ public class PrimaryDataSourceConfig {
     public DataSource primaryDataSource(){
         return DataSourceBuilder.create().build();
     }*/
-
 
 
     @Autowired
@@ -63,13 +65,18 @@ public class PrimaryDataSourceConfig {
 
     @Bean(name = "entityManagerFactoryPrimary")
     @Primary
-    public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(EntityManagerFactoryBuilder builder){
-        return builder
+    public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(EntityManagerFactoryBuilder builder) {
+        HashMap<String, Object> properties = new HashMap<String, Object>();
+        properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
+
+        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = builder
                 .dataSource(primaryDataSource())
                 .properties(getVendorProperties(primaryDataSource()))
                 .persistenceUnit("primary")
                 .packages(basePackages)
                 .build();
+        localContainerEntityManagerFactoryBean.setJpaPropertyMap(properties);
+        return localContainerEntityManagerFactoryBean;
     }
 
 }

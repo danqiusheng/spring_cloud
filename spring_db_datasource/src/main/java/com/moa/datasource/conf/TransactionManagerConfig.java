@@ -32,9 +32,16 @@ public class TransactionManagerConfig {
 
     @Bean
     public PlatformTransactionManager jtaTransactionManager() throws Throwable {
+
+        UserTransactionManager userTransactionManager =  userTransactionManager();
+        AtomikosJtaPlatform.transactionManager = userTransactionManager;
+        UserTransaction userTransaction =   userTransaction();
+        AtomikosJtaPlatform.transaction = userTransaction;
+
         JtaTransactionManager jtaTransactionManager = new JtaTransactionManager();
-        jtaTransactionManager.setTransactionManager(userTransactionManager());
-        jtaTransactionManager.setUserTransaction(userTransaction());
+        jtaTransactionManager.setTransactionManager(userTransactionManager);
+        jtaTransactionManager.setUserTransaction(userTransaction);
+
         return jtaTransactionManager;
     }
 }

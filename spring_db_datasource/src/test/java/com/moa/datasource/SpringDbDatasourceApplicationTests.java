@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.jta.JtaTransactionManager;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -33,16 +34,17 @@ public class SpringDbDatasourceApplicationTests {
 	@Autowired
 	private UserService userService;
 
+
+
 	@Test
-	@Transactional(transactionManager = "jtaTransactionManager")
 	@Rollback(false)
-	public void test() throws Exception {
+	@Transactional
+	public void test()   {
 		userService.save(new User("aaa", 10));
 		userService.save(new User("bbb", 20));
 		userService.save(new User("ccc", 30));
 		userService.save(new User("ddd", 40));
 		userService.save(new User("eee", 50));
-
 		 //Assert.assertEquals(5, studentRepository.findAll().size());
 
 		stuentService.save(new Student("o1", 1));

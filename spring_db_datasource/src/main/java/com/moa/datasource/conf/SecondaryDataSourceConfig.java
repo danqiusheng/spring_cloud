@@ -9,22 +9,25 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by Administrator on 2017/10/17.
  */
 @Configuration
-@EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "${spring.datasource.secondary.basePackages}",
         entityManagerFactoryRef = "entityManagerFactorySecondary",
         transactionManagerRef = "jtaTransactionManager")
+@DependsOn("jtaTransactionManager")
+@EnableTransactionManagement
 public class SecondaryDataSourceConfig {
 
     @Value("${spring.datasource.secondary.basePackages}")
@@ -36,7 +39,7 @@ public class SecondaryDataSourceConfig {
         return new DataSourceProperties();
     }
 
-    @Bean
+    @Bean()
     @ConfigurationProperties("spring.datasource.secondary")
     public DataSource othersDataSource(){
         return secondaryProperties().initializeDataSourceBuilder().build();
@@ -58,11 +61,15 @@ public class SecondaryDataSourceConfig {
 
     @Bean(name = "entityManagerFactorySecondary")
     public LocalContainerEntityManagerFactoryBean othersEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-        return builder
+        HashMap<String, Object> properties = new HashMap<String, Object>();
+        properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
+        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = builder
                 .dataSource(othersDataSource())
                 . properties(getVendorProperties(othersDataSource()))
                 .persistenceUnit("others")
                 .packages(basePackages)
                 .build();
+       localContainerEntityManagerFactoryBean.setJpaPropertyMap(properties);
+        return  localContainerEntityManagerFactoryBean;
     }
 }
