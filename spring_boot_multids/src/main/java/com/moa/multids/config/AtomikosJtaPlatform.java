@@ -1,4 +1,4 @@
-package com.moa.druid.config;
+package com.moa.multids.config;
 
 import org.hibernate.engine.transaction.jta.platform.internal.AbstractJtaPlatform;
 

@@ -2,7 +2,6 @@ package com.moa.druid;
 
 import com.moa.druid.primary.model.User;
 import com.moa.druid.primary.repository.UserRepository;
-import com.moa.druid.secondary.model.MessageInfo;
 import com.moa.druid.secondary.repository.MessageRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,10 +30,18 @@ public class DemoApplicationTests {
 		userRepository.save(new User("李四","Hello atomikos",6));
 		userRepository.save(new User("王武","Hello atomikos",4));
 
+		//messageRepository.save(new User("张三","Hello atomikos",1));
+		//messageRepository.save(new User("李四","Hello atomikos",6));
+		//messageRepository.save(new User("王武","Hello atomikos",4));
 
-		messageRepository.save(new MessageInfo("1","Hello","hello everyone"));
-		messageRepository.save(new MessageInfo("2","Hello1","hello3  everyone"));
-		messageRepository.save(new MessageInfo("3","Hello2","hello 33everyone"));
+		messageRepository.save(new User("张三","Hello atomikos",1));
+		messageRepository.save(new User("李四","Hello atomikos",6));
+		messageRepository.save(new User("王武","Hello atomikos",4));
+
+
+	/*	 messageRepository.save(new User("1","Hello","hello everyone"));
+	 	messageRepository.save(new User("2","Hello1","hello3  everyone"));
+		 messageRepository.save(new User("3","Hello2","hello 33everyone"));*/
 	}
 
 

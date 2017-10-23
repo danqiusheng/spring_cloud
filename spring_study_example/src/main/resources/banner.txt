@@ -1,0 +1,11 @@
+  __  __   ____
+ |  \/  | / __ \    /\
+ | \  / || |  | |  /  \
+ | |\/| || |  | | / /\ \
+ | |  | || |__| |/ ____ \
+ |_|  |_| \____//_/    \_\
+
+ Spring boot 版本： ${spring-boot.formatted-version}
+ 项目名 :${application.title}
+
+

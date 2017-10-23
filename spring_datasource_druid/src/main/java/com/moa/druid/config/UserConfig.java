@@ -42,8 +42,8 @@ public class UserConfig {
     private JpaVendorAdapter jpaVendorAdapter;
 
 
-    @Value("${spring.datasource.druid.primary.platform}")
-    private String platform;
+  //  @Value("${spring.datasource.druid.primary.platform}")
+   // private String platform;
 
 
     // 设置包
@@ -91,12 +91,13 @@ public class UserConfig {
         HashMap<String, Object> properties = new HashMap<String, Object>();
         properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
         properties.put("hibernate.format_sql", "true");
+        properties.put("hibernate.hbm2ddl.auto", "update");
 
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         //设置数据源
         entityManager.setJtaDataSource(primaryDataSource(env));
-        HibernateJpaVendorAdapter hibernateJpaVendorAdapter = (HibernateJpaVendorAdapter) jpaVendorAdapter;
-        hibernateJpaVendorAdapter.setDatabasePlatform(platform);
+       // HibernateJpaVendorAdapter hibernateJpaVendorAdapter = (HibernateJpaVendorAdapter) jpaVendorAdapter;
+       // hibernateJpaVendorAdapter.setDatabasePlatform(platform);
 
         // 默认方言为mysql
         entityManager.setJpaVendorAdapter(jpaVendorAdapter);

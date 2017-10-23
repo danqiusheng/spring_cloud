@@ -28,7 +28,7 @@ import java.util.Properties;
  */
 @Configuration
 @DependsOn("transactionManager")
-@EnableJpaRepositories(basePackages = "${spring.datasource.druid.secondary.basePackages}",
+@EnableJpaRepositories(basePackages = "com.moa.druid.secondary",
         entityManagerFactoryRef = "messageEntityManager",
         transactionManagerRef = "transactionManager")
 public class MessageConfig {
@@ -37,9 +37,9 @@ public class MessageConfig {
     @Value("${spring.datasource.druid.secondary.basePackages}")
     private String basePackages;
 
-
-    @Value("${spring.datasource.druid.secondary.platform}")
-    private String platform;
+    // 设置方言
+  //  @Value("${spring.datasource.druid.secondary.platform}")
+   // private String platform;
 
     @Bean
     @ConfigurationProperties("spring.datasource.druid.secondary")
@@ -64,7 +64,6 @@ public class MessageConfig {
         ds.setPoolSize(5);
         ds.setXaProperties(druidDataSourceProperties.getProperties());
         return ds;
-
     }
 
 
@@ -76,14 +75,18 @@ public class MessageConfig {
         // 这个一定需要，否则事务管理不起作用
         properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
         // 格式化
-        properties.put("hibernate.format_sql", "true");
+       // properties.put("hibernate.format_sql", "true");
+      //  properties.put("hibernate.hbm2ddl.auto", "update");
+
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
 
         //设置数据源
         entityManager.setJtaDataSource(secondaryDataSource(env));
-        HibernateJpaVendorAdapter hibernateJpaVendorAdapter = (HibernateJpaVendorAdapter) jpaVendorAdapter;
-        hibernateJpaVendorAdapter.setDatabasePlatform(platform);
+       // HibernateJpaVendorAdapter hibernateJpaVendorAdapter = (HibernateJpaVendorAdapter) jpaVendorAdapter;
+        // 设置方言
+        //hibernateJpaVendorAdapter.setDatabasePlatform(platform);
         entityManager.setJpaVendorAdapter(jpaVendorAdapter);
+        // 设置entity的包位置
         entityManager.setPackagesToScan(basePackages);
 
         // 创建持久单元名称， 唯一

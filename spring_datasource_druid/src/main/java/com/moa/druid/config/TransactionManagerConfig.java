@@ -73,11 +73,11 @@ public class TransactionManagerConfig {
      */
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
-        HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
+        //HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
         // 默认开启打印SQL
-        hibernateJpaVendorAdapter.setShowSql(true);
-        hibernateJpaVendorAdapter.setGenerateDdl(true);
-        hibernateJpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
-        return hibernateJpaVendorAdapter;
+       // hibernateJpaVendorAdapter.setShowSql(true);
+        //hibernateJpaVendorAdapter.setGenerateDdl(true);
+      //  hibernateJpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+        return new HibernateJpaVendorAdapter();
     }
 }
