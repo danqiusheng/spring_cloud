@@ -27,7 +27,7 @@ import java.util.Properties;
 public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar, EnvironmentAware {
 
     //如配置文件中未指定数据源类型，使用该默认值
-    private static final Object DATASOURCE_TYPE_DEFAULT = "org.apache.tomcat.jdbc.pool.DataSource";
+    private static final Object DATASOURCE_TYPE_DEFAULT = "com.alibaba.druid.pool.xa.DruidXADataSource";
     private ConversionService conversionService = new DefaultConversionService();
     private PropertyValues dataSourcePropertyValues;
     // 默认数据源
@@ -62,6 +62,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         dsMap.put("url", propertyResolver.getProperty("url"));
         dsMap.put("username", propertyResolver.getProperty("username"));
         dsMap.put("password", propertyResolver.getProperty("password"));
+        dsMap.put("keyPrefix","primary");
         //创建数据源;
          defaultDataSource = buildDataSource(dsMap);
         dataBinder(defaultDataSource, env);
@@ -79,7 +80,10 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         String dsPrefixs = propertyResolver.getProperty("names");
         for (String dsPrefix : dsPrefixs.split(",")) {//多个数据源
             Map<String, Object> dsMap = propertyResolver.getSubProperties(dsPrefix + ".");
-            DataSource ds = buildDataSource(dsMap);
+            Map<String,Object> map = new HashMap<String,Object>();
+            map.putAll(dsMap);
+            map.put("keyPrefix",dsPrefix);
+            DataSource ds = buildDataSource(map);
             customDataSources.put(dsPrefix, ds);
             dataBinder(ds, env);
         }
@@ -106,8 +110,28 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
             String url = dsMap.get("url").toString();
             String username = dsMap.get("username").toString();
             String password = dsMap.get("password").toString();
-            DataSourceBuilder factory = DataSourceBuilder.create().driverClassName(driverClassName).url(url).username(username).password(password).type(dataSourceType);
-             return factory.build();
+
+            String keyPrefix = dsMap.get("keyPrefix").toString();
+
+            Properties properties = new Properties();
+
+            properties.put("url",url);
+            properties.put("username",username);
+            properties.put("password",password);
+            properties.put("driverClassName",driverClassName);
+
+            AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
+            // 设置驱动数据源
+            ds.setXaDataSourceClassName((String)type);
+            // 设置唯一名
+            ds.setUniqueResourceName(keyPrefix);
+            //　设置池大小　－－－　加入设置
+            ds.setPoolSize(5);
+            ds.setXaProperties(properties);
+
+            return ds;
+          //  DataSourceBuilder factory = DataSourceBuilder.create().driverClassName(driverClassName).url(url).username(username).password(password).type(dataSourceType);
+         //    return factory.build();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

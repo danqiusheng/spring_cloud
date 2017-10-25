@@ -10,10 +10,12 @@
         <module name="cloud_eurake_ha_client" />
         <module name="cloud_eurake_ha_server" />
         <module name="cloud_eurake_server" />
+        <module name="spring_boot_multids" />
         <module name="spring_datasource" />
         <module name="spring_datasource_analyse" />
         <module name="spring_datasource_druid" />
         <module name="spring_db_datasource" />
+        <module name="spring_study_example" />
         <module name="spring_test_db" />
       </profile>
     </annotationProcessing>
@@ -23,10 +25,13 @@
       <module name="cloud_eurake_ha_server" target="1.8" />
       <module name="cloud_eurake_server" target="1.8" />
       <module name="demo" target="1.6" />
+      <module name="spring_boot_dsmulti" target="1.8" />
+      <module name="spring_boot_multids" target="1.8" />
       <module name="spring_datasource" target="1.8" />
       <module name="spring_datasource_analyse" target="1.8" />
       <module name="spring_datasource_druid" target="1.8" />
       <module name="spring_db_datasource" target="1.8" />
+      <module name="spring_study_example" target="1.8" />
       <module name="spring_test_db" target="1.8" />
     </bytecodeTargetLevel>
   </component>

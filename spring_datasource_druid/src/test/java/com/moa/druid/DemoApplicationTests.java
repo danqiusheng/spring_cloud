@@ -24,7 +24,7 @@ public class DemoApplicationTests {
 
 	@Test
 	@Transactional
-	@Rollback(false) // 防止测试单元回滚
+	@Rollback(false)
 	public void contextLoads() {
 		userRepository.save(new User("张三","Hello atomikos",1));
 		userRepository.save(new User("李四","Hello atomikos",6));
@@ -38,6 +38,7 @@ public class DemoApplicationTests {
 		messageRepository.save(new User("李四","Hello atomikos",6));
 		messageRepository.save(new User("王武","Hello atomikos",4));
 
+	//	System.out.println(1/0);
 
 	/*	 messageRepository.save(new User("1","Hello","hello everyone"));
 	 	messageRepository.save(new User("2","Hello1","hello3  everyone"));

@@ -18,10 +18,12 @@ public class AnotherUserServiceImpl implements  AnotherUserService  {
     @Autowired
     private UserService userService;
 
-    @Transactional
+   // @MyTransactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     @TargetDataSource("dataSource")
     public void save(User user) {
         userRepository.save(user);
+   //     System.out.println(1/0);
     }
 
 }

@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 
 /**
@@ -26,10 +29,17 @@ public class DynamicDataSourceAspect {
         * @Before：在方法执行之前进行执行： @annotation(targetDataSource)：
         * 会拦截注解targetDataSource的方法，否则不拦截;
         */
+       @Autowired
+       private PlatformTransactionManager transactionManager;
+
     @Before("@annotation(targetDataSource)")
     public void changeDataSource(JoinPoint point, TargetDataSource targetDataSource) throws Throwable {
         //获取当前的指定的数据源;
         String dsId = targetDataSource.value();
+        if(dsId.equals("none")){
+            return;
+        }
+
         System.out.println("------------"+dsId);
         //如果不在我们注入的所有的数据源范围之内，那么输出警告信息，系统自动使用默认的数据源。
         if (!DynamicDataSourceContextHolder.containsDataSource(dsId)) {
@@ -48,6 +58,7 @@ public class DynamicDataSourceAspect {
         logger.info("RevertDataSource : {} > {}"+targetDataSource.value()+":"+point.getSignature());
         //方法执行完毕之后，销毁当前数据源信息，进行垃圾回收。
         DynamicDataSourceContextHolder.clearDataSourceType();
+
     }
 
 }

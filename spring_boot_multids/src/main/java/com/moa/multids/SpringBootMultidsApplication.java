@@ -11,9 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @Import({DynamicDataSourceRegister.class})   // 引用配置
 @EnableTransactionManagement
-@EnableJpaRepositories(transactionManagerRef = "transactionManager" ,
-basePackages = {"com.moa.multids.repository"}
-)
+@EnableJpaRepositories(basePackages={"com.moa.multids.repository",""})
 public class SpringBootMultidsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootMultidsApplication.class, args);

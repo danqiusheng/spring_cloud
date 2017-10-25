@@ -11,6 +11,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 /**
  * Created by Administrator on 2017/10/22.
@@ -30,7 +31,9 @@ public class DynamicTransactionAspect {
     @After("@annotation(transactional)")
     public void endTransaction(JoinPoint point, Transactional transactional){
 
+
         System.out.println("结束事务");
+
     }
 
 
