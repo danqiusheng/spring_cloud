@@ -2,6 +2,7 @@ package com.moa.druid.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceProperties;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.sql.SQLException;
 import java.util.Properties;
@@ -10,6 +11,11 @@ import java.util.Properties;
  * Created by Administrator on 2017/10/18.
  */
 public class MyDruidDatasourceProperties extends DruidDataSourceProperties {
+
+
+
+    @Value("${spring.datasource.druid.XaDataSourceClassName}")
+    private String xaDataSourceClassName;
 
     /**
      * 获取所有属性的properties
@@ -82,5 +88,10 @@ public class MyDruidDatasourceProperties extends DruidDataSourceProperties {
             e.printStackTrace();
         }
         return prop;
+    }
+
+
+    public String getXaDataSourceClassName() {
+        return xaDataSourceClassName;
     }
 }

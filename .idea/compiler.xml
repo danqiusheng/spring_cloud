@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud_eurake_client" />
+        <module name="cloud_eurake_consumer" />
+        <module name="cloud_eurake_consumer_ribbon" />
         <module name="cloud_eurake_ha_client" />
         <module name="cloud_eurake_ha_server" />
         <module name="cloud_eurake_server" />
@@ -21,6 +23,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloud_eurake_client" target="1.8" />
+      <module name="cloud_eurake_consumer" target="1.8" />
+      <module name="cloud_eurake_consumer_ribbon" target="1.8" />
       <module name="cloud_eurake_ha_client" target="1.8" />
       <module name="cloud_eurake_ha_server" target="1.8" />
       <module name="cloud_eurake_server" target="1.8" />

@@ -1,5 +1,6 @@
 package com.moa.multids.service;
 
+import com.moa.multids.config.MyTransactional;
 import com.moa.multids.config.TargetDataSource;
 import com.moa.multids.model.User;
 import com.moa.multids.repository.UserRepository;
@@ -18,7 +19,7 @@ public class AnotherUserServiceImpl implements  AnotherUserService  {
     @Autowired
     private UserService userService;
 
-   // @MyTransactional(rollbackFor = Exception.class)
+   //@MyTransactional(rollbackFor = Exception.class)
     @Transactional(rollbackFor = Exception.class)
     @TargetDataSource("dataSource")
     public void save(User user) {

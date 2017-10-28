@@ -27,17 +27,17 @@ import java.util.Properties;
  * 配置mssage的mysql数据源
  */
 @Configuration
-@DependsOn("transactionManager")
-@EnableJpaRepositories(basePackages = "com.moa.druid.secondary",
+@EnableJpaRepositories(basePackages = "${spring.datasource.druid.secondary.jpaBasePackages}",
         entityManagerFactoryRef = "messageEntityManager",
         transactionManagerRef = "transactionManager")
-public class MessageConfig {
+public class MysqlConfig {
 
     // 设置包
-    @Value("${spring.datasource.druid.secondary.basePackages}")
-    private String basePackages;
+    @Value("${spring.datasource.druid.secondary.entityBasePackages}")
+    private String entityBasePackages;
 
     // 设置方言
+
   //  @Value("${spring.datasource.druid.secondary.platform}")
    // private String platform;
 
@@ -74,12 +74,7 @@ public class MessageConfig {
         HashMap<String, Object> properties = new HashMap<String, Object>();
         // 这个一定需要，否则事务管理不起作用
         properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
-        // 格式化
-       // properties.put("hibernate.format_sql", "true");
-      //  properties.put("hibernate.hbm2ddl.auto", "update");
-
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
-
         //设置数据源
         entityManager.setJtaDataSource(secondaryDataSource(env));
        // HibernateJpaVendorAdapter hibernateJpaVendorAdapter = (HibernateJpaVendorAdapter) jpaVendorAdapter;
@@ -87,8 +82,7 @@ public class MessageConfig {
         //hibernateJpaVendorAdapter.setDatabasePlatform(platform);
         entityManager.setJpaVendorAdapter(jpaVendorAdapter);
         // 设置entity的包位置
-        entityManager.setPackagesToScan(basePackages);
-
+        entityManager.setPackagesToScan(entityBasePackages);
         // 创建持久单元名称， 唯一
         entityManager.setPersistenceUnitName("secondarrPersistenceUnit");
         // 这个设置

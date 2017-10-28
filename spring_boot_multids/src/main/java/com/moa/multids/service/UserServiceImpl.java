@@ -18,8 +18,8 @@ public class UserServiceImpl  implements  UserService{
     @Autowired
     private UserRepository userRepository;
     
-     @MyTransactional(rollbackFor = Exception.class)
-    //@Transactional(rollbackFor = Exception.class)
+     //@MyTransactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     @TargetDataSource("ds2")
     public void save(User user) {
         userRepository.save(user);

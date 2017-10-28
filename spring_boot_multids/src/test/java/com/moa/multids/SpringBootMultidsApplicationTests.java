@@ -45,6 +45,8 @@ public class SpringBootMultidsApplicationTests {
 	@Test
 	//@MyTransactional(rollbackFor=Exception.class)
 	public void contextLoads() {
+
+
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		// explicitly setting the transaction name is something that can only be done programmatically
 		def.setName("SomeTxName");
@@ -54,10 +56,10 @@ public class SpringBootMultidsApplicationTests {
 			totalService.test();
 		}
 		catch (Exception ex) {
-			transactionManager.rollback(status);
+			//transactionManager.rollback(status);
 			throw ex;
 		}
-		// transactionManager.commit(status);
+		 transactionManager.commit(status);
 		System.out.println(transactionManager.getClass().getName());
 	}
 

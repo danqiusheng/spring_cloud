@@ -30,11 +30,10 @@ import java.util.Properties;
  * 配置user的 oracle 数据源
  */
 @Configuration
-@DependsOn("transactionManager")
 @EnableJpaRepositories(basePackages = "${spring.datasource.druid.primary.basePackages}",
         entityManagerFactoryRef = "userEntityManager",
         transactionManagerRef = "transactionManager")
-public class UserConfig {
+public class OracleConfig {
 
 
 
@@ -74,7 +73,6 @@ public class UserConfig {
     }
 
     @Bean
-
     @ConfigurationProperties("spring.datasource.druid")
     public JpaVendorAdapter primaryJpaVendorAdapter(){
         return new HibernateJpaVendorAdapter();

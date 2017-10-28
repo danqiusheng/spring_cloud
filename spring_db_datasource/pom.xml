@@ -69,6 +69,23 @@
 		</dependency>
 
 
+
+		<!--  配置 alibaba 的druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- 配置 alibaba 的druid结束-->
+
 		<!-- 添加atomikos 的事物管理-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
