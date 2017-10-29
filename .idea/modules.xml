@@ -10,13 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/java8_study/java8_study.iml" filepath="$PROJECT_DIR$/java8_study/java8_study.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_boot_multids/spring_boot_multids.iml" filepath="$PROJECT_DIR$/spring_boot_multids/spring_boot_multids.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_datasource/spring_datasource.iml" filepath="$PROJECT_DIR$/spring_datasource/spring_datasource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_datasource_analyse/spring_datasource_analyse.iml" filepath="$PROJECT_DIR$/spring_datasource_analyse/spring_datasource_analyse.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" filepath="$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" filepath="$PROJECT_DIR$/spring_db_datasource/spring_db_datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_study_example/spring_study_example.iml" filepath="$PROJECT_DIR$/spring_study_example/spring_study_example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_test_db/spring_test_db.iml" filepath="$PROJECT_DIR$/spring_test_db/spring_test_db.iml" />
     </modules>
   </component>
 </project>

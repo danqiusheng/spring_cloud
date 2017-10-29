@@ -6,8 +6,7 @@ import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
 /**
- *  Atomikos
- *   实现spring事务管理器与hibernate的事务管理器一致
+ * Atomikos 实现spring事务管理器与hibernate的事务管理器一致
  */
 public class AtomikosJtaPlatform extends AbstractJtaPlatform {
 
@@ -25,6 +24,5 @@ public class AtomikosJtaPlatform extends AbstractJtaPlatform {
 	protected UserTransaction locateUserTransaction() {
 		return transaction;
 	}
-
 
 }
