@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cloud_api_gateway" />
         <module name="cloud_config_client" />
         <module name="cloud_config_server_git" />
         <module name="cloud_eurake_client" />
@@ -34,6 +35,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud_api_gateway" target="1.8" />
       <module name="cloud_config_client" target="1.8" />
       <module name="cloud_config_server_git" target="1.8" />
       <module name="cloud_eurake_client" target="1.8" />

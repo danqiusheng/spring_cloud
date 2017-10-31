@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/cloud_eurake_hystrix_dashboard/pom.xml" />
         <option value="$PROJECT_DIR$/cloud_eurake_turbine/pom.xml" />
         <option value="$PROJECT_DIR$/cloud_eurake_turbine_amqp/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_api_gateway/pom.xml" />
       </list>
     </option>
   </component>

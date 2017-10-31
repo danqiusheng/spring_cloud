@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 1101
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+zuul:
+  routes:
+    eureka-consumer:
+                    path: /eureka-consumer/**
+                    serviceId: eureka-consumer
+    eureka-client:
+                    path: /eureka-client/**
+                    serviceId: eureka-client

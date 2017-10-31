@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud_api_gateway/cloud_api_gateway.iml" filepath="$PROJECT_DIR$/cloud_api_gateway/cloud_api_gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud_config_client/cloud_config_client.iml" filepath="$PROJECT_DIR$/cloud_config_client/cloud_config_client.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud_config_server_git/cloud_config_server_git.iml" filepath="$PROJECT_DIR$/cloud_config_server_git/cloud_config_server_git.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud_eurake_turbine_amqp/cloud_eurake_turbine_amqp.iml" filepath="$PROJECT_DIR$/cloud_eurake_turbine_amqp/cloud_eurake_turbine_amqp.iml" />
