@@ -32,7 +32,9 @@ public class HelloController {
     }
 
     @GetMapping("/dc")
-    public String dc() {
+    public String dc() throws InterruptedException {
+        // 触发服务降级操作
+        Thread.sleep(5000L);
         String services = "Services: " + discoveryClient.getServices();
         System.out.println(services);
         return services;

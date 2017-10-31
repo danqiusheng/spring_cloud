@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_client/cloud_eurake_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_client/cloud_eurake_client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer/cloud_eurake_consumer.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer/cloud_eurake_consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer_ribbon/cloud_eurake_consumer_ribbon.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer_ribbon/cloud_eurake_consumer_ribbon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eurake_ha_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eurake_ha_client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eurake_ha_server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_server/cloud_eurake_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_config_client/cloud_config_client.iml" filepath="$PROJECT_DIR$/cloud_config_client/cloud_config_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_config_server_git/cloud_config_server_git.iml" filepath="$PROJECT_DIR$/cloud_config_server_git/cloud_config_server_git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_turbine_amqp/cloud_eurake_turbine_amqp.iml" filepath="$PROJECT_DIR$/cloud_eurake_turbine_amqp/cloud_eurake_turbine_amqp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_client/cloud_eureka_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_client/cloud_eureka_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer/cloud_eureka_consumer.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer/cloud_eureka_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer_feign/cloud_eureka_consumer_feign.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer_feign/cloud_eureka_consumer_feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer_ribbon/cloud_eureka_consumer_ribbon.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer_ribbon/cloud_eureka_consumer_ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_consumer_ribbon_hystrix/cloud_eureka_consumer_ribbon_hystrix.iml" filepath="$PROJECT_DIR$/cloud_eurake_consumer_ribbon_hystrix/cloud_eureka_consumer_ribbon_hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eureka_ha_client.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_client/cloud_eureka_ha_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eureka_ha_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_ha_server/cloud_eureka_ha_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_hystrix_dashboard/cloud_eureka_hystrix_dashboard.iml" filepath="$PROJECT_DIR$/cloud_eurake_hystrix_dashboard/cloud_eureka_hystrix_dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_server/cloud_eureka_server.iml" filepath="$PROJECT_DIR$/cloud_eurake_server/cloud_eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud_eurake_turbine/cloud_eureka_turbine.iml" filepath="$PROJECT_DIR$/cloud_eurake_turbine/cloud_eureka_turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/java8_study/java8_study.iml" filepath="$PROJECT_DIR$/java8_study/java8_study.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" filepath="$PROJECT_DIR$/spring_datasource_druid/spring_datasource_druid.iml" />

@@ -3,11 +3,11 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moa.spring</groupId>
-	<artifactId>cloud_eurake_ha_client</artifactId>
+	<artifactId>cloud_eureka_ha_client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloud_eurake_ha_client</name>
+	<name>cloud_eureka_ha_client</name>
 	<description>eurake的高可用客户端 </description>
 
 	<parent>

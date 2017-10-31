@@ -2,19 +2,21 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_config_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_config_server_git" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_consumer_feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_consumer_ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_consumer_ribbon_hystrix" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_ha_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_ha_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_hystrix_dashboard" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eurake_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_boot_multids" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_datasource" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_datasource_analyse" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud_eurake_turbine_amqp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_datasource_druid" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_db_datasource" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_study_example" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_test_db" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

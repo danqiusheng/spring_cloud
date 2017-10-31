@@ -11,6 +11,13 @@
         <option value="$PROJECT_DIR$/spring_study_example/pom.xml" />
         <option value="$PROJECT_DIR$/cloud_eurake_consumer/pom.xml" />
         <option value="$PROJECT_DIR$/cloud_eurake_consumer_ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_eurake_consumer_feign/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_config_server_git/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_config_client/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_eurake_consumer_ribbon_hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_eurake_hystrix_dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_eurake_turbine/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_eurake_turbine_amqp/pom.xml" />
       </list>
     </option>
   </component>
